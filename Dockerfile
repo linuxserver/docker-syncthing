@@ -2,24 +2,21 @@ FROM linuxserver/baseimage
 MAINTAINER Your Name <your@email.com>
 
 #Applying stuff
-RUN apt-get update -q && \
-##DO STUFF HERE 
-## END EACH LINE WITH && \
-## EXCEPT THE LINE BELOW
+RUN curl -s https://syncthing.net/release-key.txt | sudo apt-key add - && \
+echo deb http://apt.syncthing.net/ syncthing release | sudo tee /etc/apt/sources.list.d/syncthing-release.list && \
+apt-get update -q && install syncthing && \
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-ADD cron/ /etc/cron.d/
-ADD defaults/ /defaults/
 RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh
 
 
 # Volumes and Ports
-VOLUME /volume
-EXPOSE PORT
+VOLUME /config
+EXPOSE 8384
 
 ## NOTES ##
 ## Delete files\folders not needed, e.g. if you dont run any cron commands, delete the cron folder and the "ADD cron/ /etc/cron.d/" line. 
