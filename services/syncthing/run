@@ -1,3 +1,5 @@
 #!/bin/bash
+
 umask 0000
+
 exec /sbin/setuser abc "syncthing -home=/config -no-browser -no-restart" 
