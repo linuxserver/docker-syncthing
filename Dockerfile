@@ -1,10 +1,12 @@
 FROM linuxserver/baseimage
 MAINTAINER lonix <lonixx@gmail.com>
+ENV APTLIST="syncthing"
 
 #Applying stuff
-RUN curl -s https://syncthing.net/release-key.txt | sudo apt-key add - && \
-echo deb http://apt.syncthing.net/ syncthing release | sudo tee /etc/apt/sources.list.d/syncthing-release.list && \
-apt-get update -q && apt-get install -y syncthing && \
+RUN curl -s https://syncthing.net/release-key.txt | apt-key add - && \
+echo deb http://apt.syncthing.net/ syncthing release | tee /etc/apt/sources.list.d/syncthing-release.list && \
+apt-get update -q && apt-get install -y $APTLIST && \
+usermod -d /config abc && \
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
