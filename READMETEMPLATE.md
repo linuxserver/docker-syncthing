@@ -32,7 +32,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-Browse to http://<server-ip>:8384 and follow the wizard
+Browse to http://<hostname>:8384 and follow the wizard
 
 
 ## Updates
