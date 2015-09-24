@@ -2,25 +2,27 @@
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
-# linuxserver/<container-name>
+# linuxserver/syncthing
 
-<Provide a short, concise description of the application. No more than two SHORT paragraphs. Link to sources where possible and include an image illustrating your point if necessary. Point users to the original applications website, as that's the best place to get support - not here.>
+![https://syncthing.net](https://syncthing.net/images/logo-horizontal.svg)
+
+Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
 
 ## Usage
 
 ```
-docker create --name=<container-name> -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 1234:1234 linuxserver/<container-name>
+docker create --name=syncthing -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 8384:8384 linuxserver/syncthing
 ```
 
 **Parameters**
 
-* `-p 4242` - the port(s)
+* `-p 8384` - the port(s)
 * `-v /etc/localhost` for timesync - *optional*
-* `-v /config` -
+* `-v /config` - This contain configuration to keep it static, aswell as a default shared directory 
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it quassel-core /bin/bash`.
+It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it syncthing /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -30,16 +32,16 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-<Insert a basic user guide here to get a n00b up and running with the software inside the container.> DELETE ME
+Browse to http://<server-ip>:8384 and follow the wizard
 
 
 ## Updates
 
-* Upgrade to the latest version simply `docker restart <container-name>`.
-* To monitor the logs of the container in realtime `docker logs -f <container-name>`.
+* Upgrade to the latest version simply `docker restart syncthing`.
+* To monitor the logs of the container in realtime `docker logs -f syncthing`.
 
 
 
 ## Versions
 
-+ **dd.MM.yyyy:** This is the standard Version type now. 
++ **24.09.2015:** Inital Release. 
