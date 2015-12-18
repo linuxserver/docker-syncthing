@@ -1,7 +1,7 @@
 ![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
-* [forum.linuxserver.io](http://forum.linuxserver.io) 
+* [forum.linuxserver.io](http://forum.linuxserver.io)
 * [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 
 # linuxserver/syncthing
@@ -18,8 +18,8 @@ You can find some of the best documentation available on the web at [docs.syncth
 docker create \
   --name=syncthing \
   --net=host
-  -v *path to config*:/config \
-  -v *path to data*:/mnt/any/dir/you/want \
+  -v *host path to config*:/config \
+  -v *host path to data*:/mnt/any/dir/you/want \
   -e PGID=1001 -e PUID=1001  \
   -p 8384:8384 \
   linuxserver/syncthing
@@ -55,4 +55,4 @@ You can find some of the best documentation available on the web at [docs.syncth
 ## Versions
 
 + **18.12.2015:** Initial testing / release (IronicBadger)
-+ **24.09.2015:** Inital dev complete
++ **24.09.2015:** Inital dev complete (Lonix)
