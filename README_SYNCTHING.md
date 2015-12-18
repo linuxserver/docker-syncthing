@@ -21,7 +21,6 @@ docker create \
   -v *host path to config*:/config \
   -v *host path to data*:/mnt/any/dir/you/want \
   -e PGID=1001 -e PUID=1001  \
-  -p 8384:8384 \
   linuxserver/syncthing
 ```
 
