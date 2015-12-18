@@ -1,6 +1,8 @@
 ![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
+The [LinuxServer.io](http://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
+* [forum.linuxserver.io](http://forum.linuxserver.io) 
+* [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 
 # linuxserver/syncthing
 
@@ -8,40 +10,49 @@ The [LinuxServer.io](http://linuxserver.io) team brings you another quality cont
 
 Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
 
+You can find some of the best documentation available on the web at [docs.syncthing.net](http://docs.syncthing.net/).
+
 ## Usage
 
 ```
-docker create --name=syncthing -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 8384:8384 linuxserver/syncthing
+docker create \
+  --name=syncthing \
+  --net=host
+  -v *path to config*:/config \
+  -v *path to data*:/mnt/any/dir/you/want \
+  -e PGID=1001 -e PUID=1001  \
+  -p 8384:8384 \
+  linuxserver/syncthing
 ```
 
 **Parameters**
 
-* `-p 8384` - the port(s)
-* `-v /etc/localhost` for timesync - *optional*
-* `-v /config` - This contain configuration to keep it static, aswell as a default shared directory 
+* `--net=host` - allows Syncthing to communicate over the network (required)
+* `-v /config` - This contain configuration to keep it static, as well as a default shared directory
+* `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it syncthing /bin/bash`.
-
 ### User / Group Identifiers
 
-**TL;DR** - The `PGID` and `PUID` values set the user / group you'd like your container to 'run as' to the host OS. This can be a user you've created or even root (not recommended).
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" <sup>TM</sup>.
 
-Part of what makes our containers work so well is by allowing you to specify your own `PUID` and `PGID`. This avoids nasty permissions errors with relation to data volumes (`-v` flags). When an application is installed on the host OS it is normally added to the common group called users, Docker apps due to the nature of the technology can't be added to this group. So we added this feature to let you easily choose when running your containers.
+In this instance `PUID=1001` and `PGID=1001`. To find yours use `genent passwd` as below:
 
-## Setting up the application 
+	getent passwd | grep dockeruser
+    dockeruser:x:1001:1001:,,,:/home/dockeruser
 
-Browse to http://<hostname>:8384 and follow the wizard
+## Setting up the application
 
+You can find some of the best documentation available on the web at [docs.syncthing.net](http://docs.syncthing.net/).
 
-## Updates
+## Misc
 
-* Upgrade to the latest version simply `docker restart syncthing`.
-* To monitor the logs of the container in realtime `docker logs -f syncthing`.
-
-
+* Shell access whilst the container is running: `docker exec -it syncthing /bin/bash`
+* Upgrade to the latest version: `docker restart syncthing`
+* To monitor the logs of the container in realtime: `docker logs -f syncthing`
 
 ## Versions
 
-+ **24.09.2015:** Inital Release. 
++ **18.12.2015:** Initial testing / release (IronicBadger)
++ **24.09.2015:** Inital dev complete
