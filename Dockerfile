@@ -21,4 +21,4 @@ RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
 
 # Volumes and Ports
 VOLUME ["/config", "/sync"]
-EXPOSE 8384
+EXPOSE 8384 22000 21027/UDP
