@@ -1,8 +1,8 @@
-![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
+![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](http://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
-* [forum.linuxserver.io](http://forum.linuxserver.io)
-* [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
+* [forum.linuxserver.io](https://forum.linuxserver.io)
+* [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 
 # linuxserver/syncthing
 
