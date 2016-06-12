@@ -30,6 +30,9 @@ docker create \
 * `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-p 8384` Webui Port
+* `-p 22000` Listening Port
+* `-p 21027/udp` Discovery Port
 
 ### User / Group Identifiers
 
