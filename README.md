@@ -17,20 +17,22 @@ You can find some of the best documentation available on the web at [docs.syncth
 ```
 docker create \
   --name=syncthing \
-  --net=host
   -v *host path to config*:/config \
   -v *host path to data*:/mnt/any/dir/you/want \
-  -e PGID=1001 -e PUID=1001  \
+  -e PGID=<gid> -e PUID=<uid>  \
+  -p 8384:8384 -p 22000:22000 -p 21027:21027/udp \
   linuxserver/syncthing
 ```
 
 **Parameters**
 
-* `--net=host` - allows Syncthing to communicate over the network (required)
 * `-v /config` - This contain configuration to keep it static, as well as a default shared directory
 * `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-p 8384` Webui Port
+* `-p 22000` Listening Port
+* `-p 21027/udp` Discovery Port
 
 ### User / Group Identifiers
 
