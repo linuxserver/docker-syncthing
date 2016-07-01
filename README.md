@@ -1,6 +1,6 @@
 ![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring easy user mapping and community support. Find us for support at:
 * [forum.linuxserver.io](https://forum.linuxserver.io)
 * [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 
@@ -52,10 +52,10 @@ You can find some of the best documentation available on the web at [docs.syncth
 ## Misc
 
 * Shell access whilst the container is running: `docker exec -it syncthing /bin/bash`
-* Upgrade to the latest version: `docker restart syncthing`
 * To monitor the logs of the container in realtime: `docker logs -f syncthing`
 
 ## Versions
 
-+ **18.12.2015:** Initial testing / release (IronicBadger)
-+ **24.09.2015:** Inital dev complete (Lonix)
++ **02.07.16:** Rebase to alpine for smaller image size. 
++ **18.12.15:** Initial testing / release (IronicBadger)
++ **24.09.15:** Inital dev complete (Lonix)
