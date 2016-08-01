@@ -1,8 +1,9 @@
 ![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring easy user mapping and community support. Find us for support at:
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
 * [forum.linuxserver.io](https://forum.linuxserver.io)
 * [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
+* [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/syncthing
 
@@ -36,12 +37,14 @@ docker create \
 
 ### User / Group Identifiers
 
-Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" <sup>TM</sup>.
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
 
-In this instance `PUID=1001` and `PGID=1001`. To find yours use `genent passwd` as below:
+In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as below:
 
-	getent passwd | grep dockeruser
-    dockeruser:x:1001:1001:,,,:/home/dockeruser
+```
+  $ id <dockeruser>
+    uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
+```
 
 ## Setting up the application
 
@@ -49,7 +52,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 **Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user\password` for the webUI.
 
-## Misc
+## Info
 
 * Shell access whilst the container is running: `docker exec -it syncthing /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f syncthing`
