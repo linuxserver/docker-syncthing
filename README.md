@@ -61,6 +61,6 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
-+ **02.07.16:** Rebase to alpine for smaller image size. 
++ **11.08.16:** Rebase to alpine linux. 
 + **18.12.15:** Initial testing / release (IronicBadger)
 + **24.09.15:** Inital dev complete (Lonix)
