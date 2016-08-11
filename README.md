@@ -1,6 +1,6 @@
 ![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring auto-update on startup, easy user mapping and community support. Find us for support at:
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring easy user mapping and community support. Find us for support at:
 * [forum.linuxserver.io](https://forum.linuxserver.io)
 * [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 * [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
