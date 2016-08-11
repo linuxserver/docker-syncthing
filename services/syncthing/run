@@ -1,5 +1,0 @@
-#!/bin/bash
-
-umask 0000
-
-exec /sbin/setuser abc syncthing -home=/config -no-browser -no-restart --gui-address="0.0.0.0:8384"
