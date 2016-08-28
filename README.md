@@ -6,12 +6,17 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 * [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/syncthing
-
-![https://syncthing.net](https://syncthing.net/images/logo-horizontal.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/syncthing.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/syncthing.svg)][hub]
+[![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-syncthing)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-syncthing/)
+[hub]: https://hub.docker.com/r/linuxserver/syncthing/
 
 Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
 
 You can find some of the best documentation available on the web at [docs.syncthing.net](http://docs.syncthing.net/).
+
+[![syncthing](https://syncthing.net/images/logo-horizontal.svg)][syncthingurl]
+[syncthingurl]: https://syncthing.net
 
 ## Usage
 
@@ -61,6 +66,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
++ **28.08.16:** Add badges to README. 
 + **11.08.16:** Rebase to alpine linux. 
 + **18.12.15:** Initial testing / release (IronicBadger)
 + **24.09.15:** Inital dev complete (Lonix)
