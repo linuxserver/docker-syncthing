@@ -69,6 +69,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
++ **30.09.16:** Fix umask. 
 + **09.09.16:** Add layer badges to README. 
 + **28.08.16:** Add badges to README. 
 + **11.08.16:** Rebase to alpine linux. 
