@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/syncthing
-[![](https://images.microbadger.com/badges/image/linuxserver/syncthing.svg)](http://microbadger.com/images/linuxserver/syncthing "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/syncthing.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/syncthing.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-syncthing)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-syncthing/)
+[![](https://images.microbadger.com/badges/version/linuxserver/syncthing.svg)](https://microbadger.com/images/linuxserver/syncthing "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/syncthing.svg)](http://microbadger.com/images/linuxserver/syncthing "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/syncthing.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/syncthing.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-syncthing)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-syncthing/)
 [hub]: https://hub.docker.com/r/linuxserver/syncthing/
 
 Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
@@ -67,8 +67,17 @@ You can find some of the best documentation available on the web at [docs.syncth
 * Shell access whilst the container is running: `docker exec -it syncthing /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f syncthing`
 
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' syncthing`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/syncthing`
+
 ## Versions
 
++ **14-10-16:** Add version layer information.
 + **30.09.16:** Fix umask. 
 + **09.09.16:** Add layer badges to README. 
 + **28.08.16:** Add badges to README. 
