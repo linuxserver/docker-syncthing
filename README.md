@@ -33,7 +33,13 @@ docker create \
   linuxserver/syncthing
 ```
 
-**Parameters**
+## Parameters
+
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
+So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
+http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
+
 
 * `-v /config` - This contain configuration to keep it static, as well as a default shared directory
 * `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
