@@ -17,8 +17,12 @@ ARG SYNC_BUILD="$SYNC_SRC/src/github.com/syncthing"
 RUN \
  apk add --no-cache --virtual=build-dependencies \
 	curl \
-	go \
+	g++ \
+	gcc \
 	tar && \
+ apk add --no-cache --virtual=build-dependencies2 \
+	--repository http://nl.alpinelinux.org/alpine/edge/community \
+	go && \
 
 # compile syncthing
  SYNC_TAG=$(curl -sX GET "https://api.github.com/repos/syncthing/syncthing/releases/latest" \
@@ -52,7 +56,8 @@ RUN \
 
 # cleanup
  apk del --purge \
-	build-dependencies && \
+	build-dependencies \
+	build-dependencies2 && \
  rm -rf \
 	/tmp/*
 
