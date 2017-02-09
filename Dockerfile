@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM lsiobase/alpine:3.5
 MAINTAINER sparklyballs
 
 # set version label
@@ -19,10 +19,8 @@ RUN \
 	curl \
 	g++ \
 	gcc \
+	go \
 	tar && \
- apk add --no-cache --virtual=build-dependencies2 \
-	--repository http://nl.alpinelinux.org/alpine/edge/community \
-	go && \
 
 # compile syncthing
  SYNC_TAG=$(curl -sX GET "https://api.github.com/repos/syncthing/syncthing/releases/latest" \
@@ -56,8 +54,7 @@ RUN \
 
 # cleanup
  apk del --purge \
-	build-dependencies \
-	build-dependencies2 && \
+	build-dependencies && \
  rm -rf \
 	/tmp/*
 

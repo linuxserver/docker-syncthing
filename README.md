@@ -83,6 +83,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
++ **08.02.17:** Rebase to alpine 3.5
 + **01.11.16:** Switch to compiling latest version from git source.
 + **14.10.16:** Add version layer information.
 + **30.09.16:** Fix umask. 
