@@ -83,6 +83,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
++ **29.07.17:** Simplify build structure as symlinks failing on > 0.14.32
 + **28.05.17:** Rebase to alpine 3.6.
 + **08.02.17:** Rebase to alpine 3.5.
 + **01.11.16:** Switch to compiling latest version from git source.
