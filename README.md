@@ -29,6 +29,7 @@ docker create \
   -v *host path to config*:/config \
   -v *host path to data*:/mnt/any/dir/you/want \
   -e PGID=<gid> -e PUID=<uid>  \
+  -e UMASK_SET=<022> \
   -p 8384:8384 -p 22000:22000 -p 21027:21027/udp \
   linuxserver/syncthing
 ```
@@ -45,6 +46,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-e UMASK_SET` for umask setting , *optional* , default if left unset is 022. 
 * `-p 8384` Webui Port
 * `-p 22000` Listening Port
 * `-p 21027/udp` Discovery Port
@@ -83,6 +85,7 @@ You can find some of the best documentation available on the web at [docs.syncth
 
 ## Versions
 
++ **25.10.17:** Add env for manual setting of umask.
 + **29.07.17:** Simplify build structure as symlinks failing on > 0.14.32
 + **28.05.17:** Rebase to alpine 3.6.
 + **08.02.17:** Rebase to alpine 3.5.
