@@ -1,26 +1,25 @@
-FROM lsiobase/alpine:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
 # environment settings
 ARG SYNC_SRC="/tmp/syncthing"
 ARG SYNC_BUILD="$SYNC_SRC/src/github.com/syncthing/syncthing"
 ENV HOME="/config"
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	curl \
 	g++ \
 	gcc \
 	go \
 	tar && \
-
-# compile syncthing
+ echo "**** compile syncthing ****" && \
  mkdir -p \
 	"${SYNC_BUILD}" && \
  export GOPATH="${SYNC_SRC}" && \
@@ -34,8 +33,7 @@ RUN \
 	"${SYNC_BUILD}" --strip-components=1 && \
  cd "${SYNC_BUILD}" && \
  go run build.go -no-upgrade -version=${SYNC_TAG} && \
-
-# install syncthing
+ echo "**** install syncthing ****" && \
  install -d -o abc -g abc \
 	/var/lib/syncthing && \
  install -D -m755 \
@@ -47,8 +45,7 @@ RUN \
 	fi; \
  done && \
  export GOPATH="" && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
