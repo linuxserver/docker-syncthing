@@ -42,7 +42,7 @@ So -p 8080:80 would expose port 80 from inside the container to be accessible fr
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
 
 
-* `-v /config` - This contain configuration to keep it static, as well as a default shared directory
+* `-v /config` - This contains configuration to keep it static, as well as a default shared directory
 * `-v /mnt/dir` - Add multiple folders to allow Syncthing access to data you wish to sync
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
