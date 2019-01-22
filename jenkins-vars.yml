@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-syncthing
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'syncthing'
+  - EXT_REPO = 'syncthing'
+  - BUILD_VERSION_ARG = 'SYNCTHING_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-syncthing'
+  - CONTAINER_NAME = 'syncthing'
+  - DOCKERHUB_IMAGE = 'linuxserver/syncthing'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/syncthing'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/syncthing'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='8384'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''
