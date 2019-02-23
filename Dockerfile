@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.7 as buildstage
+FROM lsiobase/alpine:3.9 as buildstage
 # specifically using 3.7 alpine in buildstage
 # cgo bug in 1.10x go
 # runtime stage uses 3.8 alpine
@@ -48,7 +48,7 @@ echo "**** fetch source code ****" && \
  done
 
 ############## runtime stage ##############
-FROM lsiobase/alpine:3.8
+FROM lsiobase/alpine:3.9
 
 # set version label
 ARG BUILD_DATE
