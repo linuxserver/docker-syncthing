@@ -1,7 +1,4 @@
 FROM lsiobase/alpine.armhf:3.9 as buildstage
-# specifically using 3.7 alpine in buildstage
-# cgo bug in 1.10x go
-# runtime stage uses 3.8 alpine
 
 # build variables
 ARG SYNCTHING_RELEASE
