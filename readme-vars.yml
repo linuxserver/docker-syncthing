@@ -29,7 +29,7 @@ param_usage_include_ports: true
 param_ports:
   - { external_port: "8384", internal_port: "8384", port_desc: "Application WebUI" }
   - { external_port: "22000", internal_port: "22000", port_desc: "Listening port" }
-  - { external_port: "21027/udp", internal_port: "21027/udp", port_desc: "Protocol discovery" }
+  - { external_port: "21027", internal_port: "21027/udp", port_desc: "Protocol discovery" }
 
 # application setup block
 app_setup_block_enabled: true

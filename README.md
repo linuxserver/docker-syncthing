@@ -57,7 +57,7 @@ docker create \
   -e UMASK_SET=<022> \
   -p 8384:8384 \
   -p 22000:22000 \
-  -p 21027/udp:21027/udp \
+  -p 21027:21027/udp \
   -v </path/to/appdata/config>:/config \
   -v </path/to/data1>:/data1 \
   -v </path/to/data2>:/data2 \
@@ -89,7 +89,7 @@ services:
     ports:
       - 8384:8384
       - 22000:22000
-      - 21027/udp:21027/udp
+      - 21027:21027/udp
     restart: unless-stopped
 ```
 
