@@ -171,6 +171,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **05.03.19:** - Update Build process for v1.1.0 release.
 * **22.02.19:** - Rebasing to alpine 3.9.
 * **16.01.19:** - Add pipeline logic and multi arch.
 * **30.07.18:** - Rebase to alpine 3.8 and use buildstage.
