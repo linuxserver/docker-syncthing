@@ -57,7 +57,7 @@ docker create \
   -e UMASK_SET=<022> \
   -p 8384:8384 \
   -p 22000:22000 \
-  -p 21027/udp:21027/udp \
+  -p 21027:21027/udp \
   -v </path/to/appdata/config>:/config \
   -v </path/to/data1>:/data1 \
   -v </path/to/data2>:/data2 \
@@ -89,7 +89,7 @@ services:
     ports:
       - 8384:8384
       - 22000:22000
-      - 21027/udp:21027/udp
+      - 21027:21027/udp
     restart: unless-stopped
 ```
 
@@ -171,6 +171,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **05.03.19:** - Update Build process for v1.1.0 release.
 * **22.02.19:** - Rebasing to alpine 3.9.
 * **16.01.19:** - Add pipeline logic and multi arch.
 * **30.07.18:** - Rebase to alpine 3.8 and use buildstage.
