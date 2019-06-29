@@ -40,6 +40,7 @@ app_setup_nginx_reverse_proxy_block: ""
 # changelog
 
 changelogs:
+  - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "05.03.19:", desc: "Update Build process for v1.1.0 release." }
   - { date: "22.02.19:", desc: "Rebasing to alpine 3.9." }

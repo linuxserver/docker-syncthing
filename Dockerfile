@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.9 as buildstage
+FROM lsiobase/alpine:3.10 as buildstage
 
 # build variables
 ARG SYNCTHING_RELEASE
@@ -35,7 +35,7 @@ echo "**** fetch source code ****" && \
 	build syncthing
 
 ############## runtime stage ##############
-FROM lsiobase/alpine:3.9
+FROM lsiobase/alpine:3.10
 
 # set version label
 ARG BUILD_DATE
