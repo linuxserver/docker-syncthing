@@ -19,7 +19,7 @@ param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
-  - { env_var: "UMASK_SET", env_value: "<022>", desc: "Umask setting - [explaination](https://askubuntu.com/questions/44542/what-is-umask-and-how-does-it-work)" }
+  - { env_var: "UMASK_SET", env_value: "<022>", desc: "Umask setting - [explanation](https://askubuntu.com/questions/44542/what-is-umask-and-how-does-it-work)" }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "Configuration files." }
