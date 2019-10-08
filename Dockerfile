@@ -29,6 +29,8 @@ echo "**** fetch source code ****" && \
 	/tmp/sync --strip-components=1 && \
  echo "**** compile syncthing  ****" && \
  cd /tmp/sync && \
+ rm -f go.sum && \
+ go clean -modcache && \
  CGO_ENABLED=0 go run build.go \
 	-no-upgrade \
 	-version=${SYNCTHING_RELEASE} \
