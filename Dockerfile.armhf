@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:arm32v7-3.10 as buildstage
+FROM lsiobase/alpine:arm32v7-3.11 as buildstage
 
 # build variables
 ARG SYNCTHING_RELEASE
@@ -37,7 +37,7 @@ echo "**** fetch source code ****" && \
 	build syncthing
 
 ############## runtime stage ##############
-FROM lsiobase/alpine:arm32v7-3.10
+FROM lsiobase/alpine:arm32v7-3.11
 
 # set version label
 ARG BUILD_DATE
