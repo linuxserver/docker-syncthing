@@ -43,7 +43,7 @@ FROM lsiobase/alpine:3.11
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs,thelamer"
+LABEL maintainer="thelamer"
 
 # environment settings
 ENV HOME="/config"
@@ -59,4 +59,4 @@ COPY root/ /
 
 # ports and volumes
 EXPOSE 8384 22000 21027/UDP
-VOLUME /config /sync
+VOLUME /config
