@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-UMASK_SET=${UMASK_SET:-022}
-
-umask "$UMASK_SET"
+if [ -n "$UMASK_SET" ]; then
+	umask "$UMASK_SET"
+fi
 
 exec \
 	s6-setuidgid abc syncthing \
