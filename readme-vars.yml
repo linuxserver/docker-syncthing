@@ -3,7 +3,7 @@
 # project information
 project_name: syncthing
 project_url: "https://syncthing.net"
-project_logo: "https://syncthing.net/images/logo-horizontal.svg"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syncthing-banner.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 
@@ -16,15 +16,17 @@ available_architectures:
 # container parameters
 common_param_env_vars_enabled: true #PGID, PUID, etc, you can set it to 'optional'
 param_container_name: "{{ project_name }}"
+param_usage_include_hostname: 'optional' #you can set it to 'optional'
+param_hostname: "{{ project_name }}"
+param_hostname_desc: "Optionally the hostname can be defined."
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
-  - { env_var: "UMASK_SET", env_value: "<022>", desc: "Umask setting - [explanation](https://askubuntu.com/questions/44542/what-is-umask-and-how-does-it-work)" }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "Configuration files." }
-  - { vol_path: "/data1", vol_host_path: "</path/to/data1>", desc: "Data1" }
-  - { vol_path: "/data2", vol_host_path: "</path/to/data2>", desc: "Data2" }
+  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Configuration files." }
+  - { vol_path: "/data1", vol_host_path: "/path/to/data1", desc: "Data1" }
+  - { vol_path: "/data2", vol_host_path: "/path/to/data2", desc: "Data2" }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "8384", internal_port: "8384", port_desc: "Application WebUI" }
@@ -40,6 +42,7 @@ app_setup_nginx_reverse_proxy_block: ""
 # changelog
 
 changelogs:
+  - { date: "15.09.20:", desc: "Use go from alpine edge repo to compile. Remove duplicate UMASK env var. Add hostname setting." }
   - { date: "01.06.20:", desc: "Rebasing to alpine 3.12." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
