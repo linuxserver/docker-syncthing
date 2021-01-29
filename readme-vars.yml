@@ -42,6 +42,7 @@ app_setup_nginx_reverse_proxy_block: ""
 # changelog
 
 changelogs:
+  - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
   - { date: "15.09.20:", desc: "Use go from alpine edge repo to compile. Remove duplicate UMASK env var. Add hostname setting." }
   - { date: "01.06.20:", desc: "Rebasing to alpine 3.12." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
