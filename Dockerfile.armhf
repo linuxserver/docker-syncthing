@@ -6,8 +6,6 @@ ARG SYNCTHING_RELEASE
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache \
-	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-	--repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
 	curl \
 	g++ \
 	gcc \
