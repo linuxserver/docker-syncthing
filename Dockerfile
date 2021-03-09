@@ -46,6 +46,7 @@ LABEL maintainer="thelamer"
 
 # environment settings
 ENV HOME="/config"
+ENV STGUIADDRESS=0.0.0.0:8384
 
 RUN \
  echo "**** create var lib folder ****" && \
