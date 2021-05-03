@@ -87,7 +87,8 @@ services:
       - /path/to/data2:/data2
     ports:
       - 8384:8384
-      - 22000:22000
+      - 22000:22000/tcp
+      - 22000:22000/udp
       - 21027:21027/udp
     restart: unless-stopped
 ```
@@ -102,7 +103,8 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Europe/London \
   -p 8384:8384 \
-  -p 22000:22000 \
+  -p 22000:22000/tcp \
+  -p 22000:22000/udp \
   -p 21027:21027/udp \
   -v /path/to/appdata/config:/config \
   -v /path/to/data1:/data1 \
@@ -119,7 +121,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | :----: | --- |
 | `--hostname=` | Optionally the hostname can be defined. |
 | `-p 8384` | Application WebUI |
-| `-p 22000` | Listening port |
+| `-p 22000/tcp` | Listening port (TCP) |
+| `-p 22000/udp` | Listening port (UDP) |
 | `-p 21027/udp` | Protocol discovery |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
@@ -237,6 +240,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **03.05.21:** - Add port mapping for 22000/udp.
 * **29.01.21:** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
 * **23.01.21:** - Rebasing to alpine 3.13.
 * **15.09.20:** - Use go from alpine edge repo to compile. Remove duplicate UMASK env var. Add hostname setting.
