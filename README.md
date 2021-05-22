@@ -90,8 +90,6 @@ services:
       - 22000:22000/tcp
       - 22000:22000/udp
       - 21027:21027/udp
-    sysctls:
-      - net.core.rmem_max=2097152
     restart: unless-stopped
 ```
 
@@ -111,7 +109,6 @@ docker run -d \
   -v /path/to/appdata/config:/config \
   -v /path/to/data1:/data1 \
   -v /path/to/data2:/data2 \
-  --sysctl="net.core.rmem_max=2097152" \
   --restart unless-stopped \
   ghcr.io/linuxserver/syncthing
 ```
@@ -133,7 +130,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-v /config` | Configuration files. |
 | `-v /data1` | Data1 |
 | `-v /data2` | Data2 |
-| `--sysctl=` | Raise maximum UDP buffer size. |
 
 ## Environment variables from files (Docker secrets)
 
@@ -244,6 +240,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **12.05.21:** - Remove sysctl parameter again
 * **03.05.21:** - Raise maximum UDP buffer size.
 * **03.05.21:** - Add port mapping for 22000/udp.
 * **29.01.21:** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
