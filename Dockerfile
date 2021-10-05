@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.13 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14 as buildstage
 
 # build variables
 ARG SYNCTHING_RELEASE
@@ -36,7 +36,7 @@ echo "**** fetch source code ****" && \
 	build syncthing
 
 ############## runtime stage ##############
-FROM ghcr.io/linuxserver/baseimage-alpine:3.13
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 
 # set version label
 ARG BUILD_DATE
