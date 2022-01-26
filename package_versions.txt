@@ -3,8 +3,8 @@ alpine-keys-2.4-r0
 apk-tools-2.12.7-r0
 bash-5.1.4-r0
 busybox-1.33.1-r6
-ca-certificates-20191127-r5
-ca-certificates-bundle-20191127-r5
+ca-certificates-20211220-r0
+ca-certificates-bundle-20211220-r0
 coreutils-8.32-r2
 libacl-2.2.53-r0
 libattr-2.5.1-r0
