@@ -32,7 +32,8 @@ param_volumes:
 param_usage_include_ports: true
 param_ports:
   - { external_port: "8384", internal_port: "8384", port_desc: "Application WebUI" }
-  - { external_port: "22000", internal_port: "22000", port_desc: "Listening port" }
+  - { external_port: "22000", internal_port: "22000/tcp", port_desc: "Listening port (TCP)" }
+  - { external_port: "22000", internal_port: "22000/udp", port_desc: "Listening port (UDP)" }
   - { external_port: "21027", internal_port: "21027/udp", port_desc: "Protocol discovery" }
 
 # application setup block
@@ -44,6 +45,10 @@ app_setup_nginx_reverse_proxy_block: ""
 # changelog
 
 changelogs:
+  - { date: "05.10.21:", desc: "Rebase to alpine 3.14." }
+  - { date: "12.05.21:", desc: "Remove sysctl parameter again" }
+  - { date: "03.05.21:", desc: "Raise maximum UDP buffer size." }
+  - { date: "03.05.21:", desc: "Add port mapping for 22000/udp." }
   - { date: "09.03.21:", desc: "Use `STGUIADDRESS` instead of a hardcoded value." }
   - { date: "29.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
   - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
