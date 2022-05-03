@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.15 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-edge as buildstage
 
 # build variables
 ARG SYNCTHING_RELEASE
