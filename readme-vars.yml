@@ -43,7 +43,8 @@ app_setup_nginx_reverse_proxy_block: ""
 # changelog
 
 changelogs:
-  - { date: "03.05.21:", desc: "Rebase to alpine 3.15 (builds on edge for go 1.18)." }
+  - { date: "17.08.22:", desc: "Build on alpine 3.16 for go 1.18)." }
+  - { date: "03.05.22:", desc: "Rebase to alpine 3.15 (builds on edge for go 1.18)." }
   - { date: "05.10.21:", desc: "Rebase to alpine 3.14." }
   - { date: "12.05.21:", desc: "Remove sysctl parameter again" }
   - { date: "03.05.21:", desc: "Raise maximum UDP buffer size." }
