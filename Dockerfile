@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:edge as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16 as buildstage
 
 # build variables
 ARG SYNCTHING_RELEASE
