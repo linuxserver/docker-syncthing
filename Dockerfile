@@ -59,3 +59,5 @@ COPY root/ /
 # ports and volumes
 EXPOSE 8384 22000/tcp 22000/udp 21027/UDP
 VOLUME /config
+
+HEALTHCHECK CMD curl --fail http://localhost:8384/rest/noauth/health || exit 1   
