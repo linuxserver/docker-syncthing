@@ -38,9 +38,6 @@ param_ports:
 app_setup_block_enabled: true
 app_setup_block: "**Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user/password` for the webUI."
 
-nginx_reverse_proxy_snippet_enabled: false
-nginx_reverse_proxy_block: ""
-
 # changelog
 changelogs:
   - { date: "17.08.22:", desc: "Build on alpine 3.16 for go 1.18)." }
