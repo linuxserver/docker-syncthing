@@ -40,6 +40,7 @@ app_setup_block: "**Note: ** The Syncthing devs highly suggest setting a passwor
 
 # changelog
 changelogs:
+  - { date: "27.01.23:", desc: "Build on alpine 3.17 (for go 1.19)." }
   - { date: "17.08.22:", desc: "Build on alpine 3.16 for go 1.18)." }
   - { date: "03.05.22:", desc: "Rebase to alpine 3.15 (builds on edge for go 1.18)." }
   - { date: "05.10.21:", desc: "Rebase to alpine 3.14." }
