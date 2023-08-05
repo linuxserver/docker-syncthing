@@ -12,7 +12,7 @@ busybox-binsh                          1.35.0-r29                            apk
 ca-certificates                        20230506-r0                           apk        
 ca-certificates-bundle                 20230506-r0                           apk        
 coreutils                              9.1-r0                                apk        
-curl                                   8.2.0-r1                              apk        
+curl                                   8.2.1-r0                              apk        
 github.com/AudriusButkevicius/pfilter  v0.0.11                               go-module  
 github.com/AudriusButkevicius/recli    v0.0.7-0.20220911121932-d000ce8fbf0f  go-module  
 github.com/Azure/go-ntlmssp            v0.0.0-20221128193559-754e69321358    go-module  
@@ -65,7 +65,7 @@ libattr                                2.5.1-r2                              apk
 libbsd                                 0.11.7-r0                             apk        
 libc-utils                             0.7.2-r3                              apk        
 libcrypto3                             3.0.9-r3                              apk        
-libcurl                                8.2.0-r1                              apk        
+libcurl                                8.2.1-r0                              apk        
 libintl                                0.21.1-r1                             apk        
 libmd                                  1.0.4-r0                              apk        
 libproc                                3.3.17-r2                             apk        
