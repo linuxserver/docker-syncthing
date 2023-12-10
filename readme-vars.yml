@@ -22,8 +22,7 @@ param_env_vars:
 param_usage_include_vols: true
 param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Configuration files."}
-  - {vol_path: "/data1", vol_host_path: "/path/to/data1", desc: "Data1"}
-  - {vol_path: "/data2", vol_host_path: "/path/to/data2", desc: "Data2"}
+  - {vol_path: "/data", vol_host_path: "/path/to/data", desc: "Dedicated data directory"}
 param_usage_include_ports: true
 param_ports:
   - {external_port: "8384", internal_port: "8384", port_desc: "Application WebUI"}
@@ -35,6 +34,7 @@ app_setup_block_enabled: true
 app_setup_block: "**Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user/password` for the webUI."
 # changelog
 changelogs:
+  - {date: "10.12.23:", desc: "Add a dedicated data directory volume"}
   - {date: "05.09.23:", desc: "Rebase to Alpine 3.18."}
   - {date: "01.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
   - {date: "13.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}

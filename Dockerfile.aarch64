@@ -43,7 +43,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 # environment settings
-ENV HOME="/config"
+ENV HOME="/data"
 
 RUN \
   echo "**** create var lib folder ****" && \
@@ -57,3 +57,4 @@ COPY root/ /
 # ports and volumes
 EXPOSE 8384 22000/tcp 22000/udp 21027/UDP
 VOLUME /config
+VOLUME /data
