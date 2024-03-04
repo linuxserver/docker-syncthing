@@ -44,6 +44,7 @@ LABEL maintainer="thelamer"
 
 # environment settings
 ENV HOME="/config"
+ENV PORT=8384
 
 RUN \
   echo "**** create var lib folder ****" && \
@@ -55,5 +56,5 @@ COPY --from=buildstage /tmp/sync/syncthing /usr/bin/
 COPY root/ /
 
 # ports and volumes
-EXPOSE 8384 22000/tcp 22000/udp 21027/UDP
+EXPOSE ${PORT} 22000/tcp 22000/udp 21027/UDP
 VOLUME /config
