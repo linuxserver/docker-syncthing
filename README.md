@@ -79,7 +79,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/syncthing/config:/config
       - /path/to/data1:/data1
       - /path/to/data2:/data2
     ports:
@@ -103,7 +103,7 @@ docker run -d \
   -p 22000:22000/tcp \
   -p 22000:22000/udp \
   -p 21027:21027/udp \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/syncthing/config:/config \
   -v /path/to/data1:/data1 \
   -v /path/to/data2:/data2 \
   --restart unless-stopped \
@@ -289,6 +289,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.03.24:** - Rebase to Alpine 3.19.
 * **05.09.23:** - Rebase to Alpine 3.18.
 * **01.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **13.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
