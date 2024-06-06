@@ -16,9 +16,6 @@ param_container_name: "{{ project_name }}"
 param_usage_include_hostname: 'optional' #you can set it to 'optional'
 param_hostname: "{{ project_name }}"
 param_hostname_desc: "Optionally the hostname can be defined."
-param_usage_include_env: true
-param_env_vars:
-  - {env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London."}
 param_usage_include_vols: true
 param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Configuration files."}
@@ -35,6 +32,7 @@ app_setup_block_enabled: true
 app_setup_block: "**Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user/password` for the webUI."
 # changelog
 changelogs:
+  - {date: "06.06.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "05.03.24:", desc: "Rebase to Alpine 3.19."}
   - {date: "05.09.23:", desc: "Rebase to Alpine 3.18."}
   - {date: "01.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
