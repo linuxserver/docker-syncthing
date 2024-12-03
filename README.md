@@ -61,10 +61,12 @@ The architectures supported by this image are:
 
 **Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user/password` for the webUI.
 
- 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
+
+>[!NOTE]
+>Unless a parameter is flaged as 'optional', it is *mandatory* and a value must be provided.
 
 ### docker-compose (recommended, [click here for more info](https://docs.linuxserver.io/general/docker-compose))
 
@@ -118,10 +120,10 @@ Containers are configured using parameters passed at runtime (such as those abov
 | Parameter | Function |
 | :----: | --- |
 | `--hostname=` | Optionally the hostname can be defined. |
-| `-p 8384` | Application WebUI |
-| `-p 22000/tcp` | Listening port (TCP) |
-| `-p 22000/udp` | Listening port (UDP) |
-| `-p 21027/udp` | Protocol discovery |
+| `-p 8384:8384` | Application WebUI |
+| `-p 22000:22000/tcp` | Listening port (TCP) |
+| `-p 22000:22000/udp` | Listening port (UDP) |
+| `-p 21027:21027/udp` | Protocol discovery |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
