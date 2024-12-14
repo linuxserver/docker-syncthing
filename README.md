@@ -128,8 +128,8 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-v /config` | Configuration files. |
-| `-v /data1` | Data1 |
-| `-v /data2` | Data2 |
+| `-v /data1` | Example mount that mounts data into an arbitrary container-path. Use this path when configuring folders in the SyncThing UI |
+| `-v /data2` | Another example mount using an arbitrary container-path. Use this path when configuring folders in the SyncThing UI |
 
 ## Environment variables from files (Docker secrets)
 
