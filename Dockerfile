@@ -25,13 +25,13 @@ RUN \
   tar xf \
   /tmp/syncthing-src.tar.gz -C \
     /tmp/sync --strip-components=1 && \
-  echo "**** compile syncthing  ****" && \
+  echo "**** compile strelaysrv ****" && \
   cd /tmp/sync && \
   go clean -modcache && \
   CGO_ENABLED=0 go run build.go \
     -no-upgrade \
     -version=${SYNCTHING_RELEASE} \
-    build syncthing
+    build strelaysrv
 
 ############## runtime stage ##############
 FROM ghcr.io/linuxserver/baseimage-alpine:3.20
@@ -40,7 +40,7 @@ FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="thelamer"
+LABEL maintainer="jetpks"
 
 # environment settings
 ENV HOME="/config"
@@ -52,7 +52,7 @@ RUN \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version
 
 # copy files from build stage and local files
-COPY --from=buildstage /tmp/sync/syncthing /usr/bin/
+COPY --from=buildstage /tmp/sync/strelaysrv /usr/bin/
 COPY root/ /
 
 # ports and volumes
