@@ -63,7 +63,7 @@ github.com/shirou/gopsutil/v4        v4.25.3                               go-mo
 github.com/stretchr/objx             v0.5.2                                go-module    
 github.com/stretchr/testify          v1.10.0                               go-module    
 github.com/syncthing/notify          v0.0.0-20250207082249-f0fa8f99c2bc    go-module    
-github.com/syncthing/syncthing       (devel)                               go-module    
+github.com/syncthing/syncthing       UNKNOWN                               go-module    
 github.com/syndtr/goleveldb          v1.0.1-0.20220721030215-126854af5e6d  go-module    
 github.com/thejerf/suture/v4         v4.0.6                                go-module    
 github.com/tklauser/go-sysconf       v0.3.14                               go-module    
