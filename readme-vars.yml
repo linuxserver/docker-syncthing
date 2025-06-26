@@ -28,6 +28,7 @@ param_ports:
   - {external_port: "22000", internal_port: "22000/tcp", port_desc: "Listening port (TCP)"}
   - {external_port: "22000", internal_port: "22000/udp", port_desc: "Listening port (UDP)"}
   - {external_port: "21027", internal_port: "21027/udp", port_desc: "Protocol discovery"}
+readonly_supported: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: "**Note: ** The Syncthing devs highly suggest setting a password for this container as it listens on 0.0.0.0. To do this go to `Actions -> Settings -> set user/password` for the webUI."
