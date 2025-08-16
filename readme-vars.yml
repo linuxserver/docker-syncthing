@@ -67,7 +67,7 @@ init_diagram: |
     svc-syncthing -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.21"
+    "baseimage-alpine:3.22"
   }
   "syncthing:latest" <- Base Images
 # changelog
