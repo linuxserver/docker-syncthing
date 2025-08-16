@@ -290,6 +290,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **16.08.25:** - Rebase to Alpine 3.22.
 * **08.13.25:** - Use double-dash long options for syncthing v2.0.0.
 * **12.03.24:** - Rebase to Alpine 3.21.
 * **06.06.24:** - Rebase to Alpine 3.20.
