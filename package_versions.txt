@@ -59,7 +59,7 @@ github.com/rcrowley/go-metrics       v0.0.0-20250401214520-65e299d6c5c9    go-mo
 github.com/remyoudompheng/bigfft     v0.0.0-20230129092748-24d4a6f8daec    go-module    
 github.com/riywo/loginshell          v0.0.0-20200815045211-7d26008be1ab    go-module    
 github.com/russross/blackfriday/v2   v2.1.0                                go-module    
-github.com/shirou/gopsutil/v4        v4.25.7                               go-module    
+github.com/shirou/gopsutil/v4        v4.25.6                               go-module    
 github.com/stretchr/objx             v0.5.2                                go-module    
 github.com/stretchr/testify          v1.10.0                               go-module    
 github.com/syncthing/notify          v0.0.0-20250528144937-c7027d4f7465    go-module    
