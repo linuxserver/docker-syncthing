@@ -54,7 +54,7 @@ github.com/prometheus/client_golang  v1.23.0                               go-mo
 github.com/prometheus/client_model   v0.6.2                                go-module    
 github.com/prometheus/common         v0.65.0                               go-module    
 github.com/prometheus/procfs         v0.16.1                               go-module    
-github.com/quic-go/quic-go           v0.52.0                               go-module    
+github.com/quic-go/quic-go           v0.56.0                               go-module    
 github.com/rcrowley/go-metrics       v0.0.0-20250401214520-65e299d6c5c9    go-module    
 github.com/remyoudompheng/bigfft     v0.0.0-20230129092748-24d4a6f8daec    go-module    
 github.com/riywo/loginshell          v0.0.0-20200815045211-7d26008be1ab    go-module    
@@ -72,11 +72,11 @@ github.com/urfave/cli                v1.22.17                              go-mo
 github.com/vitrun/qart               v0.0.0-20160531060029-bf64b92db6b0    go-module    
 github.com/willabides/kongplete      v0.4.0                                go-module    
 go.uber.org/automaxprocs             v1.6.0                                go-module    
-golang.org/x/crypto                  v0.41.0                               go-module    
+golang.org/x/crypto                  v0.44.0                               go-module    
 golang.org/x/exp                     v0.0.0-20250811191247-51f88131bc50    go-module    
-golang.org/x/net                     v0.43.0                               go-module    
-golang.org/x/sys                     v0.35.0                               go-module    
-golang.org/x/text                    v0.28.0                               go-module    
+golang.org/x/net                     v0.47.0                               go-module    
+golang.org/x/sys                     v0.38.0                               go-module    
+golang.org/x/text                    v0.31.0                               go-module    
 golang.org/x/time                    v0.12.0                               go-module    
 google.golang.org/protobuf           v1.36.7                               go-module    
 gopkg.in/yaml.v3                     v3.0.1                                go-module    
