@@ -1,8 +1,45 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# Listen address lookup from:
+#  1. Environ
+#    - 1. STGUIADDRESS
+#    - 2. STGUIHOST and/or STGUIPORT
+#  2. Config (config.xml)
+#  3. Default (0.0.0.0:8384)
+
+cfg_address=$(
+  awk -v lookup=0 '
+    $1 == "<gui"     { lookup=1 }
+    $1 == "</gui>"   { lookup=0 }
+    lookup == 1      { print }
+  ' /config/config.xml 2>/dev/null \
+  | grep address \
+  | sed 's|</\?address>||g; s|[[:space:]]||g'
+)
+
+cfg_host="${cfg_address%%:*}"
+cfg_port="${cfg_address##*:}"
+
+gui_address_host="${STGUIADDRESS%%:*}"
+gui_address_port="${STGUIADDRESS##*:}"
+
+gui_host="${STGUIHOST:-$cfg_host}"
+gui_port="${STGUIPORT:-$cfg_port}"
+
+gui_host="${gui_address_host:-$gui_host}"
+gui_port="${gui_address_port:-$gui_port}"
+
+gui_host="${gui_host:-0.0.0.0}"
+gui_port="${gui_port:-8384}"
+
+liveliness_target_host=$gui_host
+if [[ "x${gui_host}" == "x0.0.0.0" ]]; then
+  liveliness_target_host="127.0.0.1"
+fi
+
 exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 8384" \
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${liveliness_target_host} ${gui_port}" \
         s6-setuidgid abc syncthing \
         --home=/config --no-browser --no-restart \
-        --gui-address="0.0.0.0:8384"
+        --gui-address="${gui_host}:${gui_port}"

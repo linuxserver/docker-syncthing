@@ -13,6 +13,10 @@ available_architectures:
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true #PGID, PUID, etc, you can set it to 'optional'
+params_environs: 
+  - { environ: "STGUIADDRESS", optional: true, desc: "Override default (0.0.0.0:8384) or STGUIHOST/STGUIPORT or confix.xml application Web UI listen address. Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default."}
+  - { environ: "STGUIHOST", optional: true, desc: "Override default (0.0.0.0) or config.xml application Web UI service listen host. Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default."}
+  - { environ: "STGUIPORT", optional: true, desc: "Override default (8384) or config.xml application Web UI service listen port. Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default."}
 param_container_name: "{{ project_name }}"
 param_usage_include_hostname: 'optional' #you can set it to 'optional'
 param_hostname: "{{ project_name }}"
@@ -72,6 +76,7 @@ init_diagram: |
   "syncthing:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "06.12.25:", desc: "[Feat] Allow override of GUI's listen address from Syncthing configuration file or environs"}
   - {date: "16.08.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "13.08.25:", desc: "Use double-dash long options for syncthing v2.0.0."}
   - {date: "03.12.24:", desc: "Rebase to Alpine 3.21."}

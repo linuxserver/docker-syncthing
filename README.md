@@ -78,6 +78,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+      - STGUIADDRESS="0.0.0.0:8384" # optional
+      - STGUIHOST=0.0.0.0 # optional
+      - STGUIPORT=8384 # optional
     volumes:
       - /path/to/syncthing/config:/config
       - /path/to/data1:/data1
@@ -99,6 +102,9 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
+  -e STGUIADDRESS="0.0.0.0:8384" `#optional` \
+  -e STGUIHOST=0.0.0.0 `#optional` \
+  -e STGUIPORT=8384 `#optional` \
   -p 8384:8384 \
   -p 22000:22000/tcp \
   -p 22000:22000/udp \
@@ -121,9 +127,12 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-p 22000:22000/tcp` | Listening port (TCP) |
 | `-p 22000:22000/udp` | Listening port (UDP) |
 | `-p 21027:21027/udp` | Protocol discovery |
-| `-e PUID=1000` | for UserID - see below for explanation |
-| `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
+| `-e PUID=1000` | For UserID - see below for explanation |
+| `-e PGID=1000` | For GroupID - see below for explanation |
+| `-e TZ=Etc/UTC` | Specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
+| `-e STGUIADDRESS=0.0.0.0:8384` | Specify the application WebUI service listening address (default to `0.0.0.0:8384` if not overrided by env nor config.xml). Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default. |
+| `-e STGUIHOST=0.0.0.0` | Specify the application WebUI service listening host (default to `0.0.0.0` if not overrided by env nor config.xml). Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default. |
+| `-e STGUIPORT=8384` | Specify the application WebUI service listening port (default to `8384` if not overrided by env nor config.xml). Priority: env.STGUIADDRESS -> env.STGUIHOST/env.STGUIPORT -> config.xml -> default. |
 | `-v /config` | Configuration files. |
 | `-v /data1` | Data1 |
 | `-v /data2` | Data2 |
@@ -289,7 +298,7 @@ docker run --rm --privileged lscr.io/linuxserver/qemu-static --reset
 Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
 
 ## Versions
-
+* **06.12.25:** - [Feat] Allow override of GUI's listen address from Syncthing configuration file or environs
 * **16.08.25:** - Rebase to Alpine 3.22.
 * **13.08.25:** - Use double-dash long options for syncthing v2.0.0.
 * **03.12.24:** - Rebase to Alpine 3.21.
