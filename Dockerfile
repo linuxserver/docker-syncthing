@@ -56,5 +56,5 @@ COPY --from=buildstage /tmp/sync/syncthing /usr/bin/
 COPY root/ /
 
 # ports and volumes
-EXPOSE 8384 22000/tcp 22000/udp 21027/UDP
+EXPOSE 8384 22000/tcp 22000/udp 21027/udp
 VOLUME /config
