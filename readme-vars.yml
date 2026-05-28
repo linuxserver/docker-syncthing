@@ -20,6 +20,7 @@ param_hostname_desc: "Optionally the hostname can be defined."
 param_usage_include_vols: true
 param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Configuration files."}
+opt_param_volumes:
   - {vol_path: "/data1", vol_host_path: "/path/to/data1", desc: "Data1"}
   - {vol_path: "/data2", vol_host_path: "/path/to/data2", desc: "Data2"}
 param_usage_include_ports: true
