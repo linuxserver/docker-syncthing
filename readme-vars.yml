@@ -72,6 +72,7 @@ init_diagram: |
   "syncthing:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "10.09.26:", desc: "Rebase to Alpine 3.24. Compile on Alpine edge."}
   - {date: "03.03.26:", desc: "Rebase to Alpine 3.23."}
   - {date: "16.08.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "13.08.25:", desc: "Use double-dash long options for syncthing v2.0.0."}
