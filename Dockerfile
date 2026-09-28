@@ -49,6 +49,8 @@ RUN \
   echo "**** create var lib folder ****" && \
   install -d -o abc -g abc \
     /var/lib/syncthing && \
+  echo "**** remove stock root crontab, syncthing has no cron jobs ****" && \
+  rm -f /etc/crontabs/root && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version
 
 # copy files from build stage and local files
